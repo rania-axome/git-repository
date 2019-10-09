@@ -1,19 +1,5 @@
 {
   "current": {
-    "checkout_header_image": "",
-    "checkout_logo_image": "",
-    "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
-    "checkout_body_background_image": "",
-    "checkout_body_background_color": "#fff",
-    "checkout_input_background_color_mode": "white",
-    "checkout_sidebar_background_image": "",
-    "checkout_sidebar_background_color": "#fafafa",
-    "checkout_heading_font": "Helvetica Neue",
-    "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#767676",
-    "checkout_button_color": "#e42c00",
-    "checkout_error_color": "#e42c00",
     "enable_wide_layout": false,
     "color_topbar_bg": "#cbd5cc",
     "color_body_bg": "#ffffff",
@@ -34,34 +20,61 @@
     "type_accent_size": "16px",
     "type_accent_transform": false,
     "type_accent_spacing": false,
+    "favicon": "",
+    "share_image": "",
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_google_plus_link": "",
+    "social_instagram_link": "",
+    "social_snapchat_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "social_fancy_link": "",
+    "social_rss_link": "",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
     "social_sharing_style": "normal",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "Helvetica Neue",
+    "checkout_body_font": "Helvetica Neue",
+    "checkout_accent_color": "#767676",
+    "checkout_button_color": "#e42c00",
+    "checkout_error_color": "#e42c00",
     "collections_center_grid_link": false,
     "sections": {
       "header": {
         "type": "header",
         "settings": {
           "header_search_enable": true,
+          "logo": "",
           "logo_max_width": "60",
+          "nav_menu": "main-menu",
           "nav_below_logo": true,
           "left_aligned_logo": false,
-          "show_header_lines": false
+          "show_header_lines": false,
+          "show_announcement": true,
+          "header_text": "Annoncez quelque chose ici",
+          "announcement_link": ""
         }
       },
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-0": {
-            "type": "blog",
-            "settings": {
-              "blog": "news"
-            }
-          },
           "footer-1": {
             "type": "menu",
             "settings": {
+              "menu_title": "Catégories",
               "menu": "footer"
             }
           },
@@ -73,12 +86,20 @@
           "footer-3": {
             "type": "newsletter",
             "settings": {
+              "subtext": "<p>Inscrivez-vous&nbsp;&agrave; notre newsletter et recevez nos offres exclusives.<\/p>"
+            }
+          },
+          "1570625271029": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "A propos",
+              "menu": "menu-2-footer"
             }
           }
         },
         "block_order": [
-          "footer-0",
           "footer-1",
+          "1570625271029",
           "footer-2",
           "footer-3"
         ],
@@ -92,21 +113,53 @@
           "slider-0": {
             "type": "image",
             "settings": {
+              "image": "shopify:\/\/shop_images\/bedroom-with-heart-pillows.jpg",
+              "alignment": "center center",
+              "overlay_opacity": 30,
+              "color_text": "#ffffff",
+              "text_alignment": "right",
+              "slide_heading": "Coussins",
+              "button_label": "Découvrir",
+              "button_link": "#"
             }
           },
           "slider-1": {
             "type": "image",
             "settings": {
+              "image": "",
+              "alignment": "center center",
+              "overlay_opacity": 30,
+              "color_text": "#ffffff",
+              "text_alignment": "center",
+              "slide_heading": "Image slide",
+              "button_label": "",
+              "button_link": ""
             }
           },
           "slider-2": {
             "type": "image",
             "settings": {
+              "image": "",
+              "alignment": "center center",
+              "overlay_opacity": 30,
+              "color_text": "#ffffff",
+              "text_alignment": "center",
+              "slide_heading": "Image slide",
+              "button_label": "",
+              "button_link": ""
             }
           },
           "slider-3": {
             "type": "image",
             "settings": {
+              "image": "",
+              "alignment": "center center",
+              "overlay_opacity": 30,
+              "color_text": "#ffffff",
+              "text_alignment": "center",
+              "slide_heading": "Image slide",
+              "button_label": "",
+              "button_link": ""
             }
           }
         },
@@ -117,9 +170,11 @@
           "slider-3"
         ],
         "settings": {
+          "slider_height": "small",
           "slider_autorotate": false,
           "slider_autorotate_rate": 5,
-          "slider_home_transition": "fade"
+          "slider_home_transition": "fade",
+          "text_size": "medium"
         }
       },
       "product-template": {
@@ -131,7 +186,9 @@
           "product_thumbnails_position": "right",
           "show_extra_tab": false,
           "extra_tab_content": "",
-          "social_sharing": false
+          "social_sharing": false,
+          "enable_payment_button": true,
+          "add_to_cart_width": "small"
         }
       },
       "article-template": {
@@ -158,21 +215,25 @@
           "collection-list-0": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           },
           "collection-list-1": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           },
           "collection-list-2": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           },
           "collection-list-3": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           }
         },
@@ -192,21 +253,25 @@
           "collection-list-1-0": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           },
           "collection-list-1-1": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           },
           "collection-list-1-2": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           },
           "collection-list-1-3": {
             "type": "collection",
             "settings": {
+              "collection": ""
             }
           }
         },
@@ -223,7 +288,15 @@
       "newsletter": {
         "type": "newsletter",
         "settings": {
+          "heading": "Inscription à la newsletter",
+          "subtext": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
           "color_bg": "#eaebea"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_notes_enable": false
         }
       }
     },
