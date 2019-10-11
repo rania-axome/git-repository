@@ -94,10 +94,10 @@
             "settings": {
             }
           },
-          "footer-3": {
+          "1570810130752": {
             "type": "newsletter",
             "settings": {
-              "subtext": "<p>Inscrivez-vous&nbsp;&agrave; notre newsletter et recevez nos offres exclusives.<\/p>"
+              "subtext": "<p>Inscrivez-vous &agrave; notre\u0003newsletter et recevez nos offres exclusives.<\/p>"
             }
           }
         },
@@ -105,7 +105,7 @@
           "footer-1",
           "1570625271029",
           "footer-2",
-          "footer-3"
+          "1570810130752"
         ],
         "settings": {
           "show_methods_of_payment": true
