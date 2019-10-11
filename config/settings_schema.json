@@ -32,12 +32,6 @@
     "name": "Theme Typography",
     "settings": [
       {
-        "type": "font_picker",
-        "id": "headings_font",
-        "label": "Font",
-        "default": "work_sans_n4"
-      },
-      {
         "type": "range",
         "id": "font-size-base",
         "label": "font size base",
