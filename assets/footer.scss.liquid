@@ -3,11 +3,17 @@
     .newsletter-grid__item:first-child {
       background: url("newsletter-fond.jpg") no-repeat;
       background-size: cover !important;
-      width: 61%;
+      @media only screen and (min-width: 768px) {
+        width: 61%;
+      }
+
     }
     .newsletter-grid__item:last-child {
       background-color: {{ settings.$color_secondary }};
-      width: 39%;
+      @media only screen and (min-width: 768px) {
+             width: 39%;
+      }
+
     }
     .newsletter-content-wrapper {
         padding: 38px 40px 30px;
