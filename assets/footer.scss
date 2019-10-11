@@ -1,0 +1,13 @@
+@import "theme_variables.scss";
+#shopify-section-newsletter {
+    .newsletter-grid__item:first-child {
+      background: url("newsletter-fond.jpg") no-repeat;
+    }
+    .newsletter-grid__item:last-child {
+      background-color: $brand-secondary;
+    }
+    .newsletter-content-wrapper {
+        padding: 42px 40px 31px;
+    }
+
+}
