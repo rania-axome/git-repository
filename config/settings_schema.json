@@ -8,6 +8,23 @@
     "theme_support_url": "https:\/\/support.shopify.com\/"
   },
   {
+    "name": "Theme Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_heading",
+        "label": "Headings",
+        "default": "#000000"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "color secondary",
+        "default": "#BB9F52"
+      }
+    ]
+  },
+  {
     "name": {
       "da": "Layout",
       "de": "Layout",

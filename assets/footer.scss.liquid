@@ -1,10 +1,11 @@
-@import "theme_variables.scss";
+@import variables_themes;
+
 #shopify-section-newsletter {
     .newsletter-grid__item:first-child {
       background: url("newsletter-fond.jpg") no-repeat;
     }
     .newsletter-grid__item:last-child {
-      background-color: $brand-secondary;
+      background-color: {{ settings.$color_secondary }} !important;
     }
     .newsletter-content-wrapper {
         padding: 42px 40px 31px;
