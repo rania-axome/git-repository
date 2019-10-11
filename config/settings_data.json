@@ -57,13 +57,13 @@
         "type": "header",
         "settings": {
           "header_search_enable": true,
-          "logo": "",
-          "logo_max_width": "60",
+          "logo": "shopify:\/\/shop_images\/logo-header.png",
+          "logo_max_width": "206",
           "nav_menu": "main-menu",
           "nav_below_logo": true,
           "left_aligned_logo": false,
           "show_header_lines": false,
-          "show_announcement": true,
+          "show_announcement": false,
           "header_text": "Annoncez quelque chose ici",
           "announcement_link": ""
         }
@@ -78,6 +78,13 @@
               "menu": "footer"
             }
           },
+          "1570625271029": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "A propos",
+              "menu": "menu-2-footer"
+            }
+          },
           "footer-2": {
             "type": "social",
             "settings": {
@@ -87,13 +94,6 @@
             "type": "newsletter",
             "settings": {
               "subtext": "<p>Inscrivez-vous&nbsp;&agrave; notre newsletter et recevez nos offres exclusives.<\/p>"
-            }
-          },
-          "1570625271029": {
-            "type": "menu",
-            "settings": {
-              "menu_title": "A propos",
-              "menu": "menu-2-footer"
             }
           }
         },
@@ -113,9 +113,9 @@
           "slider-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/bedroom-with-heart-pillows.jpg",
+              "image": "shopify:\/\/shop_images\/Slider.jpg",
               "alignment": "center center",
-              "overlay_opacity": 30,
+              "overlay_opacity": 15,
               "color_text": "#ffffff",
               "text_alignment": "right",
               "slide_heading": "Coussins",
@@ -170,7 +170,7 @@
           "slider-3"
         ],
         "settings": {
-          "slider_height": "small",
+          "slider_height": "medium",
           "slider_autorotate": false,
           "slider_autorotate_rate": 5,
           "slider_home_transition": "fade",
@@ -244,7 +244,7 @@
           "collection-list-3"
         ],
         "settings": {
-          "title": "Collection list"
+          "title": "Notre sélection"
         }
       },
       "collection-list-1": {
@@ -288,8 +288,8 @@
       "newsletter": {
         "type": "newsletter",
         "settings": {
-          "heading": "Inscription à la newsletter",
-          "subtext": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
+          "heading": "Newsletter",
+          "subtext": "<p>Inscrivez-vous &agrave; notre newsletter<br>et recevez nos offres exclusives.<br>D&eacute;couvrez en avant premi&egrave;re toutes nos nouveaut&eacute;s et coup de coeur.<\/p>",
           "color_bg": "#eaebea"
         }
       },
