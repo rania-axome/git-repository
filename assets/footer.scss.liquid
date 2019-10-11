@@ -10,16 +10,23 @@
       width: 39%;
     }
     .newsletter-content-wrapper {
-        padding: 42px 40px 31px;
+        padding: 38px 40px 30px;
         .newsletter-content {
             .section-header {
-                text-align: center !important;
+                h2 {
+                    text-align: center;
+                    font-size: {{ settings.$big-size }}px;
+                    line-height: 1;
+                    font-family: {{ settings.$headings_font }};
+                    margin-bottom: 5px;
+                }
             }
             p {
                 font-size: {{ settings.$font-size-base }}px;
                 line-height: 20px;
-                max-width: 250px;
+                max-width: 260px;
                 float: right;
+                margin-right: 20px;
             }
             .input-group {
                 .input-group-btn {

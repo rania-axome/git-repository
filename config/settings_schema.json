@@ -11,6 +11,10 @@
     "name": "Theme Colors",
     "settings": [
       {
+        "type": "header",
+        "content": "Main Colors"
+      },
+      {
         "type": "color",
         "id": "color_heading",
         "label": "Headings",
@@ -28,12 +32,28 @@
     "name": "Theme Typography",
     "settings": [
       {
+        "type": "font_picker",
+        "id": "headings_font",
+        "label": "Font",
+        "default": "work_sans_n4"
+      },
+      {
         "type": "range",
         "id": "font-size-base",
         "label": "font size base",
         "default": 16,
         "min": 14,
         "max": 20,
+        "step": 1,
+        "unit": "px"
+      },
+      {
+        "type": "range",
+        "id": "big-size",
+        "label": "big size",
+        "default": 50,
+        "min": 37,
+        "max": 60,
         "step": 1,
         "unit": "px"
       }
