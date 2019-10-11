@@ -5,10 +5,35 @@
       background: url("newsletter-fond.jpg") no-repeat;
     }
     .newsletter-grid__item:last-child {
-      background-color: {{ settings.$color_secondary }} !important;
+      background-color: {{ settings.$color_secondary }};
     }
     .newsletter-content-wrapper {
         padding: 42px 40px 31px;
     }
 
+}
+
+
+#shopify-section-footer {
+    .social-icons {
+    .icon {
+        &:before {
+            display: none !important;
+        }
+        width: 30px;
+        height: 30px;
+    }
+        .icon-facebook {
+            background: url("Reseau-face.svg");
+        }
+        .icon-pinterest {
+         background: url("Reseau-pinterest.svg");
+         }
+        .icon-instagram {
+        background: url("Reseau-instagram.svg");
+        }
+        .icon-youtube {
+        background: url("Reseau-youtube.svg");
+        }
+    }
 }

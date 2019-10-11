@@ -261,9 +261,9 @@
     },
     "footer": {
       "blog_title": "Dernières nouvelles",
-      "social_title": "Restez en contact",
+      "social_title": "Suivez-nous",
       "social_platform": "{{ name }} sur {{ platform }}",
-      "newsletter_title": "Infolettre",
+      "newsletter_title": "Newsletter",
       "copyright": "Droit d'auteur"
     }
   },
