@@ -2,20 +2,35 @@
 #shopify-section-newsletter {
     .newsletter-grid__item:first-child {
       background: url("newsletter-fond.jpg") no-repeat;
+      background-size: cover !important;
+      width: 61%;
     }
     .newsletter-grid__item:last-child {
       background-color: {{ settings.$color_secondary }};
+      width: 39%;
     }
     .newsletter-content-wrapper {
         padding: 42px 40px 31px;
         .newsletter-content {
+            .section-header {
+                text-align: center !important;
+            }
             p {
                 font-size: {{ settings.$font-size-base }}px;
                 line-height: 20px;
+                max-width: 250px;
+                float: right;
             }
-            .btn {
-            font-size: {{ settings.$font-size-base }}px;
+            .input-group {
+                .input-group-btn {
+                    .btn {
+                        font-size: {{ settings.$font-size-base }}px;
+                        width: 100%;
+                    }
+                }
+
             }
+
         }
     }
 

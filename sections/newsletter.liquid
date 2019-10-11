@@ -12,13 +12,7 @@
   <div class="grid__item newsletter-grid__item post-large--one-half">
     <div class="newsletter-content-wrapper">
       <div class="newsletter-content">
-        {% unless section.settings.heading == blank %}
-        <div class="section-header section-header--small">
-          <h2 class="section-header__title{% unless section.settings.subtext == blank %} section-header__title-spacing{% endunless %}">
-            {{ section.settings.heading | escape }}
-          </h2>
-        </div>
-        {% endunless %}
+
         {% unless section.settings.subtext == blank %}
           {{ section.settings.subtext }}
         {% endunless %}
@@ -29,6 +23,13 @@
   <div class="grid__item newsletter-grid__item post-large--one-half">
     <div class="newsletter-content-wrapper">
       <div class="newsletter-content">
+        {% unless section.settings.heading == blank %}
+            <div class="section-header section-header--small">
+                <h2 class="section-header__title{% unless section.settings.subtext == blank %} section-header__title-spacing{% endunless %}">
+                     {{ section.settings.heading | escape }}
+                </h2>
+            </div>
+        {% endunless %}
         {% form 'customer' %}
           {{ form.errors | default_errors }}
           {% if form.posted_successfully? %}
