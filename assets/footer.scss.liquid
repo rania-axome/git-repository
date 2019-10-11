@@ -1,4 +1,3 @@
-@import variables_themes;
 
 #shopify-section-newsletter {
     .newsletter-grid__item:first-child {
@@ -9,6 +8,15 @@
     }
     .newsletter-content-wrapper {
         padding: 42px 40px 31px;
+        .newsletter-content {
+            p {
+                font-size: {{ settings.$font-size-base }}px;
+                line-height: 20px;
+            }
+            .btn {
+            font-size: {{ settings.$font-size-base }}px;
+            }
+        }
     }
 
 }

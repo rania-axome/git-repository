@@ -25,6 +25,21 @@
     ]
   },
   {
+    "name": "Theme Typography",
+    "settings": [
+      {
+        "type": "range",
+        "id": "font-size-base",
+        "label": "font size base",
+        "default": 16,
+        "min": 14,
+        "max": 20,
+        "step": 1,
+        "unit": "px"
+      }
+    ]
+  },
+  {
     "name": {
       "da": "Layout",
       "de": "Layout",
