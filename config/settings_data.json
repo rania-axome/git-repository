@@ -3,6 +3,7 @@
     "color_heading": "#3d4246",
     "color_secondary": "#bb9f52",
     "font-size-base": 16,
+    "big-size": 50,
     "enable_wide_layout": false,
     "color_topbar_bg": "#bb9f52",
     "color_body_bg": "#ffffff",
@@ -218,25 +219,25 @@
           "collection-list-0": {
             "type": "collection",
             "settings": {
-              "collection": ""
+              "collection": "coussin-drapeau"
             }
           },
           "collection-list-1": {
             "type": "collection",
             "settings": {
-              "collection": ""
+              "collection": "coussin-ethnique"
             }
           },
           "collection-list-2": {
             "type": "collection",
             "settings": {
-              "collection": ""
+              "collection": "breloque-paros"
             }
           },
           "collection-list-3": {
             "type": "collection",
             "settings": {
-              "collection": ""
+              "collection": "coussin-drapeau"
             }
           }
         },
