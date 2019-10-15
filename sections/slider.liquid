@@ -180,6 +180,7 @@
               <h2 class="slides__title slides__title--mobile slides__title--{{ section.settings.text_size }} h1">
                 {{ block.settings.slide_heading | escape }}
               </h2>
+              <div class="slides_subtitle_mobile">{{ block.settings.slide_subtitle | escape }}</div>
             {%- endunless -%}
             {%- if show_link_button -%}
               <a href="{{ block.settings.button_link }}" class="slides__btn slides__btn--mobile btn">

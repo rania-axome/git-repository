@@ -257,7 +257,7 @@
           "heading": "Vous pourriez aimer également",
           "vendor_enable": false,
           "show_sale_circle": false,
-          "center_grid_link": false
+          "center_grid_link": true
         }
       }
     },
