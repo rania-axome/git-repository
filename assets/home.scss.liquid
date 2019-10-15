@@ -1,0 +1,54 @@
+.home-seo {
+    h1 {
+        text-align: center;
+    }
+}
+#shopify-section-newsletter {
+    .newsletter-grid__item:first-child {
+      background: url("newsletter-fond.jpg") no-repeat;
+      background-size: cover !important;
+      @media only screen and (min-width: 768px) {
+        width: 61%;
+      }
+
+    }
+    .newsletter-grid__item:last-child {
+      background-color: {{ settings.$color_secondary }};
+      @media only screen and (min-width: 768px) {
+             width: 39%;
+      }
+
+    }
+    .newsletter-content-wrapper {
+        padding: 38px 40px 30px;
+        .newsletter-content {
+            .section-header {
+                h2 {
+                    text-align: center;
+                    font-size: {{ settings.$big-size }}px;
+                    line-height: 1;
+                    font-family: 'abhaya_librebold';
+                    margin-bottom: 5px;
+                }
+            }
+            p {
+                font-size: {{ settings.$font-size-base }}px;
+                line-height: 20px;
+                max-width: 260px;
+                float: right;
+                margin-right: 20px;
+            }
+            .input-group {
+                .input-group-btn {
+                    .btn {
+                        font-size: {{ settings.$font-size-base }}px;
+                        width: 100%;
+                    }
+                }
+
+            }
+
+        }
+    }
+
+}

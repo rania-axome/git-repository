@@ -239,12 +239,19 @@
           "show_sold_out_circle": false,
           "center_grid_link": true
         }
+      },
+      "1571120764830": {
+        "type": "custom-html",
+        "settings": {
+          "custom_html": "<div class=\"home-seo\">\n<h1>Qui sommes-nous ?<\/h1>\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.<\/p>\n<\/div>"
+        }
       }
     },
     "content_for_index": [
       "slider",
       "1570806329560",
-      "newsletter"
+      "newsletter",
+      "1571120764830"
     ]
   },
   "presets": {
