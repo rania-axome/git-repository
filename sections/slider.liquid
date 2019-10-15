@@ -118,7 +118,9 @@
                   {%- unless block.settings.slide_heading == blank -%}
                     <div class="slides__title slides__title--{{ section.settings.text_size }} h1">
                       {{ block.settings.slide_heading | escape }}
+
                     </div>
+                    <div class="slides_subtitle">{{ block.settings.slide_subtitle | escape }}</div>
                   {%- endunless -%}
                   {%- if show_link_button -%}
                     <a href="{{ block.settings.button_link }}" class="slides__btn btn">
@@ -1131,6 +1133,32 @@
             "zh-TW": "標題"
           }
         },
+        {
+        "type": "text",
+         "id": "slide_subtitle",
+         "default": "subtitle",
+         "label": {
+            "da": "Overskrift",
+            "de": "Überschrift",
+            "en": "Heading",
+            "es": "Título",
+            "fi": "Otsake",
+                    "fr": "En-tête",
+                    "hi": "शीर्षक",
+                    "it": "Heading",
+                    "ja": "見出し",
+                    "ko": "제목",
+                    "ms": "Tajuk",
+                    "nb": "Overskrift",
+                    "nl": "Kop",
+                    "pt-BR": "Título",
+                    "pt-PT": "Título",
+                    "sv": "Rubrik",
+                    "th": "ส่วนหัว",
+                    "zh-CN": "标题",
+                    "zh-TW": "標題"
+                  }
+                },
         {
           "type": "text",
           "id": "button_label",

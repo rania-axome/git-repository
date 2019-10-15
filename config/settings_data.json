@@ -123,6 +123,7 @@
               "color_text": "#ffffff",
               "text_alignment": "right",
               "slide_heading": "Coussins",
+              "slide_subtitle": "Donnez du caractère à votre intérieur",
               "button_label": "Découvrir",
               "button_link": "#"
             }
@@ -136,6 +137,7 @@
               "color_text": "#ffffff",
               "text_alignment": "center",
               "slide_heading": "Image slide",
+              "slide_subtitle": "subtitle",
               "button_label": "",
               "button_link": ""
             }
@@ -149,6 +151,7 @@
               "color_text": "#ffffff",
               "text_alignment": "center",
               "slide_heading": "Image slide",
+              "slide_subtitle": "subtitle",
               "button_label": "",
               "button_link": ""
             }
@@ -162,6 +165,7 @@
               "color_text": "#ffffff",
               "text_alignment": "center",
               "slide_heading": "Image slide",
+              "slide_subtitle": "subtitle",
               "button_label": "",
               "button_link": ""
             }

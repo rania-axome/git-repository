@@ -77,7 +77,7 @@
         {% when 'menu' %}
           <div class="grid__item {{ column_width }}">
             {% unless num_columns == 1 %}
-            <h3 class="h4">{{ block.settings.menu_title | escape }}</h3>
+            <p class="h4 small-title">{{ block.settings.menu_title | escape }}</p>
             {% endunless %}
             <ul class="site-footer__links{% if num_columns == 1 %} inline-list{% endif %}">
               {% for link in linklists[block.settings.menu].links %}
@@ -88,7 +88,7 @@
 
         {% when 'social' %}
           <div class="grid__item {{ column_width }}">
-            <h3 class="h4">{{ 'layout.footer.social_title' | t }}</h3>
+            <p class="h4 small-title">{{ 'layout.footer.social_title' | t }}</p>
               {% comment %}
                 Loop through the social network links
               {% endcomment %}
@@ -97,13 +97,13 @@
 
         {% when 'text' %}
           <div class="grid__item {{ column_width }}">
-            <h3 class="h4">{{ block.settings.title | escape }}</h3>
+            <p class="h4 small-title">{{ block.settings.title | escape }}</p>
             <div class="rte">{{ block.settings.richtext }}</div>
           </div>
 
         {% when 'newsletter' %}
           <div class="grid__item {{ column_width }}">
-            <h3 class="h4">{{ 'layout.footer.newsletter_title' | t }}</h3>
+            <p class="h4 small-title">{{ 'layout.footer.newsletter_title' | t }}</p>
             {% unless block.settings.subtext == blank %}
               {{ block.settings.subtext }}
             {% endunless %}
