@@ -123,9 +123,12 @@
                     <div class="slides_subtitle">{{ block.settings.slide_subtitle | escape }}</div>
                   {%- endunless -%}
                   {%- if show_link_button -%}
-                    <a href="{{ block.settings.button_link }}" class="slides__btn btn">
-                      {{ block.settings.button_label | escape }}
+                  <div class=slide-btn>
+                   <a href="{{ block.settings.button_link }}" class="slides__btn btn">
+                        {{ block.settings.button_label | escape }}
                     </a>
+                  </div>
+
                   {%- endif -%}
                 </div>
               </div>

@@ -65,6 +65,9 @@
         margin-bottom: 28px;
         font-family: 'latoblack';
     }
+    .slide-btn {
+        text-align: center;
+    }
 }
 
 body.template-index {
@@ -94,18 +97,21 @@ body.template-index {
         max-width: 706px;
         margin: auto;
         line-height: 1.375;
+         @media only screen and (max-width: 767px) {
+             text-align: center;
+         }
     }
 }
 
 
 #shopify-section-newsletter {
     .newsletter-grid__item:first-child {
-      background: url("newsletter-fond.jpg") no-repeat;
-      background-size: cover !important;
-      @media only screen and (min-width: 768px) {
-        width: 61%;
-      }
-
+        background: #E6E4E1;
+        @media only screen and (min-width: 768px) {
+            width: 61%;
+            background: url("newsletter-fond.jpg") no-repeat;
+            background-size: cover !important;
+        }
     }
     .newsletter-grid__item:last-child {
     position: relative;
