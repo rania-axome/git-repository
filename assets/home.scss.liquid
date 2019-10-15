@@ -42,19 +42,28 @@
         }
     }
 
-
+    .slides-text-content-wrapper-right {
+        width: 65%;
+    }
     .slides__title {
         font-size: 117px;
         font-family: 'abhaya_librebold';
         line-height: 0.53;
+        @media only screen and (min-width: 769px) {
+            margin-right: 65px;
+            
+        }
         @media only screen and (max-width: 767px) {
             font-size: 60px;
         }
     }
     .slides_subtitle {
         font-size: {{ settings.$font-size-base }}px;
+        line-height: 1;
+        margin-top: 10px;
         text-transform: uppercase;
         margin-bottom: 28px;
+        font-family: 'latoblack';
     }
 }
 
