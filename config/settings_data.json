@@ -178,7 +178,7 @@
           "slider-3"
         ],
         "settings": {
-          "slider_height": "medium",
+          "slider_height": "adapt",
           "slider_autorotate": false,
           "slider_autorotate_rate": 5,
           "slider_home_transition": "fade",

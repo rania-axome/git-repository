@@ -1,13 +1,48 @@
 
 #shopify-section-slider {
-    position: relative;
+    @media only screen and (min-width: 768px) {
+      position: relative;
+    }
     &::before {
         content: "";
         background: url("feuilles-slide1.png") no-repeat;
         position: absolute;
-        top: 0;
-        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -175px;
+        height: 547px;
+        width: 298px;
+        @media only screen and (max-width: 1200px) {
+            left: -100px;
+        }
+        @media only screen and (max-width: 1024px) {
+             left: 0;
+        }
+        @media only screen and (max-width: 992px) {
+            display: none;
+        }
     }
+    &::after {
+        content: "";
+        background: url("feuilles-slide2.png") no-repeat;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: -175px;
+        height: 547px;
+        width: 298px;
+        @media only screen and (max-width: 1200px) {
+            right: -100px;
+        }
+         @media only screen and (max-width: 1024px) {
+            right: 0;
+        }
+        @media only screen and (max-width: 992px) {
+            display: none;
+        }
+    }
+
+
     .slides__title {
         font-size: 117px;
         font-family: 'abhaya_librebold';
@@ -61,10 +96,31 @@ body.template-index {
 
     }
     .newsletter-grid__item:last-child {
+    position: relative;
       background-color: {{ settings.$color_secondary }};
       @media only screen and (min-width: 768px) {
              width: 39%;
       }
+
+      &::before {
+              content: "";
+              background: url("feuilles-newsletter-exter.png") no-repeat;
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%);
+              right: -115px;
+              height: 237px;
+              width: 218px;
+              @media only screen and (max-width: 1200px) {
+                  right: -100px;
+              }
+              @media only screen and (max-width: 1024px) {
+                   right: 0;
+              }
+              @media only screen and (max-width: 992px) {
+                  display: none;
+              }
+          }
 
     }
     .newsletter-content-wrapper {
