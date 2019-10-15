@@ -51,7 +51,7 @@
         line-height: 0.53;
         @media only screen and (min-width: 769px) {
             margin-right: 65px;
-            
+
         }
         @media only screen and (max-width: 767px) {
             font-size: 60px;
@@ -73,6 +73,8 @@ body.template-index {
             .grid-link__title {
                 font-family: 'abhaya_librebold';
                 font-size: {{ settings.$font-size-base }}px + 2;
+                margin-bottom: 0;
+                line-height: 1;
             }
             .grid-link__meta {
                 color: {{ settings.color_secondary }};
@@ -84,6 +86,7 @@ body.template-index {
 
 
 .home-seo {
+    margin-top: 20px;
     h1 {
         text-align: center;
     }
@@ -106,9 +109,10 @@ body.template-index {
     }
     .newsletter-grid__item:last-child {
     position: relative;
-      background-color: {{ settings.$color_secondary }};
+      background: url("feuilles-newsletter-inter.png") {{ settings.$color_secondary }} no-repeat;
       @media only screen and (min-width: 768px) {
              width: 39%;
+
       }
 
       &::before {

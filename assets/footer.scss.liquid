@@ -6,34 +6,37 @@
     }
     .site-footer__links {
         a {
-            font-size: {{ settings.$font-size-base }}px -2;
+            font-size: {{ settings.$font-size-base }}px;
         }
     }
     .social-icons {
-    .icon {
-        &:before {
-            display: none !important;
-        }
-        width: 30px;
-        height: 30px;
-    }
         .icon-facebook {
             background: url("Reseau-face.svg");
+            width: 30px;
+            height: 30px;
+            &:before {
+                display: none !important;
+            }
         }
-        .icon-pinterest {
-         background: url("Reseau-pinterest.svg");
-         }
+
         .icon-instagram {
-        background: url("Reseau-instagram.svg");
+            background: url("Reseau-instagram.svg");
+            width: 30px;
+            height: 30px;
+            &:before {
+                display: none !important;
+            }
         }
-        .icon-youtube {
-        background: url("Reseau-youtube.svg");
-        }
+
     }
 
     .form-vertical {
         input.btn {
-        width: 100%;
+            width: 100%;
         }
     }
+     .payment-icons {
+        border-top: 1px solid #ebebeb;
+        padding-top: 15px;
+     }
 }

@@ -101,20 +101,21 @@
               {% endif %}
             </ul>
           {% endif %}
-
+         <div class="header-basket">
           <div class="header-bar__module">
             <span class="header-bar__sep" aria-hidden="true"></span>
             <a href="{{ routes.cart_url }}" class="cart-page-link">
-
+              {{ 'Panier.svg' | asset_url | img_tag: 'Panier' }}
             </a>
           </div>
 
           <div class="header-bar__module">
             <a href="{{ routes.cart_url }}" class="cart-page-link">
-              {{ 'Panier.svg' | asset_url | img_tag: 'Panier' }}
               {{ 'layout.cart.title' | t }}{% unless cart.item_count == 0 %}:{% endunless %}
-
+              <span class="cart-count header-bar__cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
             </a>
+          </div>
+
           </div>
 
           {% if section.settings.header_search_enable %}
