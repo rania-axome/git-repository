@@ -1,8 +1,39 @@
+
+#shopify-section-slider {
+    .slides__title {
+        font-size: 117px;
+        font-family: 'abhaya_librebold';
+    }
+}
+
+body.template-index {
+    .featured-products-section {
+        .grid__item {
+            .grid-link__title {
+                font-family: 'abhaya_librebold';
+                font-size: {{ settings.$font-size-base }}px + 2;
+            }
+            .grid-link__meta {
+                color: {{ settings.color_secondary }};
+                font-size: {{ settings.$font-size-base }}px - 3;
+            }
+        }
+    }
+}
+
+
 .home-seo {
     h1 {
         text-align: center;
     }
+    p {
+        max-width: 706px;
+        margin: auto;
+        line-height: 1.375;
+    }
 }
+
+
 #shopify-section-newsletter {
     .newsletter-grid__item:first-child {
       background: url("newsletter-fond.jpg") no-repeat;
@@ -23,11 +54,9 @@
         padding: 38px 40px 30px;
         .newsletter-content {
             .section-header {
-                h2 {
+                .page-heading {
                     text-align: center;
-                    font-size: {{ settings.$big-size }}px;
                     line-height: 1;
-                    font-family: 'abhaya_librebold';
                     margin-bottom: 5px;
                 }
             }

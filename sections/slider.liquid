@@ -116,9 +116,9 @@
               <div class="slides__text-content text-{{ block.settings.text_alignment }}">
                 <div class="slides-text-content-wrapper-{{ block.settings.text_alignment }}">
                   {%- unless block.settings.slide_heading == blank -%}
-                    <h2 class="slides__title slides__title--{{ section.settings.text_size }} h1">
+                    <div class="slides__title slides__title--{{ section.settings.text_size }} h1">
                       {{ block.settings.slide_heading | escape }}
-                    </h2>
+                    </div>
                   {%- endunless -%}
                   {%- if show_link_button -%}
                     <a href="{{ block.settings.button_link }}" class="slides__btn btn">

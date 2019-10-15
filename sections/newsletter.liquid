@@ -25,9 +25,9 @@
       <div class="newsletter-content">
         {% unless section.settings.heading == blank %}
             <div class="section-header section-header--small">
-                <h2 class="section-header__title{% unless section.settings.subtext == blank %} section-header__title-spacing{% endunless %}">
+                <div class="page-heading section-header__title{% unless section.settings.subtext == blank %} section-header__title-spacing{% endunless %}">
                      {{ section.settings.heading | escape }}
-                </h2>
+                </div>
             </div>
         {% endunless %}
         {% form 'customer' %}
