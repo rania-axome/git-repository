@@ -41,5 +41,24 @@
      }
 
      #contact_form {
+        .input-group {
+            @media only screen and (max-width: 767px) {
+                display: block;
+            }
+            span.input-group-btn {
+                @media only screen and (max-width: 767px) {
+                    display: block;
+                    width: 100%;
+                    margin-top: 10px !important;
+                }
+                button#subscribe {
+                    @media only screen and (max-width: 767px) {
+                         width: 100%;
+                    }
+
+                }
+            }
+
+        }
      }
 }

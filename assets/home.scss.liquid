@@ -87,6 +87,12 @@
     }
     a.btn {
         min-width: 178px;
+        height: 50px;
+        line-height: 50px;
+        padding: 0;
+        font-size: 20px;
+        text-transform: capitalize;
+        font-family: Lato,sans-serif;
     }
 }
 
@@ -138,7 +144,6 @@ body.template-index {
       background: url("feuilles-newsletter-inter.png") {{ settings.$color_secondary }} no-repeat;
       @media only screen and (min-width: 768px) {
              width: 39%;
-
       }
 
       &::before {
@@ -178,11 +183,13 @@ body.template-index {
                 max-width: 260px;
                 float: right;
                 margin-right: 20px;
+                @media only screen and (max-width: 797px) {
+                    margin-right: 0;
+                }
             }
             .input-group {
                 .input-group-btn {
                     .btn {
-                        font-size: {{ settings.$font-size-base }}px;
                         width: 100%;
                     }
                 }

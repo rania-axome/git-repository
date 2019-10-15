@@ -150,7 +150,7 @@
         </button>
       {% endunless %}
       <a href="{{ routes.cart_url }}" class="cart-page-link mobile-cart-page-link">
-        <span class="icon icon-cart header-bar__cart-icon" aria-hidden="true"></span>
+        {{ 'Panier.svg' | asset_url | img_tag: 'Panier' }}
         {{ 'layout.cart.title' | t }} <span class="cart-count{% if cart.item_count == 0 %} hidden-count{% endif %}">{{ cart.item_count }}</span>
       </a>
     </div>
