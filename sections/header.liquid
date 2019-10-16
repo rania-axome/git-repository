@@ -163,7 +163,9 @@
       {% if section.settings.nav_below_logo %}
         <div class="grid--full">
           <div class="grid__item">
+
             {% if request.page_type == 'index' %}
+            
               <h1 class="site-header__logo{% if section.settings.logo == blank %}{% unless section.settings.left_aligned_logo == false and section.settings.nav_below_logo %} post-large--left{% endunless %}{% endif %}" itemscope itemtype="http://schema.org/Organization">
 
             {% else %}
