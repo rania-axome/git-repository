@@ -39,11 +39,14 @@
     .announcement-bar--mobile {
         padding-bottom: 0;
     }
+    .wrapper-top-header {
+        padding-bottom: 5px;
+    }
 }
 
 .site-header {
     @media screen and (min-width: 769px) {
-        padding: 20px 0;
+        padding: 20px 0 10px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -70,5 +73,17 @@
     }
 }
 .site-nav {
-    margin-top: 20px 10px;
+    margin-top: 10px;
+}
+
+#MobileNavTrigger {
+    display: flex;
+    align-items: center;
+    img {
+        width: 30px;
+    }
+    span {
+        text-transform: uppercase;
+        font-family: 'latoblack';
+    }
 }

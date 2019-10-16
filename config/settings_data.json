@@ -18,7 +18,7 @@
     "color_footer_social_link": "#000000",
     "type_base_family": "lato_n4",
     "type_base_size": "16px",
-    "type_header_family": "source_sans_pro_n7",
+    "type_header_family": "lato_n4",
     "type_header_size": "32px",
     "type_accent_family": "lato_n4",
     "type_accent_size": "18px",
@@ -119,7 +119,7 @@
             "settings": {
               "image": "shopify:\/\/shop_images\/Slider.jpg",
               "alignment": "center center",
-              "overlay_opacity": 30,
+              "overlay_opacity": 10,
               "color_text": "#ffffff",
               "text_alignment": "right",
               "slide_heading": "Coussins",
@@ -199,7 +199,7 @@
           "show_sold_out_circle": true,
           "sort_enable": true,
           "tags_enable": true,
-          "center_grid_link": false
+          "center_grid_link": true
         }
       },
       "newsletter": {
@@ -237,6 +237,14 @@
         "type": "custom-html",
         "settings": {
           "custom_html": "<div class=\"home-seo\">\n<h1>Qui sommes-nous ?<\/h1>\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.<\/p>\n<\/div>"
+        }
+      },
+      "list-collections-template": {
+        "type": "list-collections-template",
+        "settings": {
+          "display_type": "all",
+          "sort": "alphabetical",
+          "grid": "3"
         }
       }
     },
