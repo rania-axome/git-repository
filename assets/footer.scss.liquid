@@ -43,6 +43,13 @@
     .site-footer__links {
         a {
             font-size: {{ settings.$font-size-base }}px;
+            position: relative;
+            padding-left: 10px;
+            &::before {
+                content: "-";
+                position: absolute;
+                left: 0;
+            }
         }
 
         @media only screen and (max-width: 768px) {

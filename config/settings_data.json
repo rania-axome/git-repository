@@ -138,8 +138,8 @@
               "text_alignment": "right",
               "slide_heading": "Image",
               "slide_subtitle": "subtitle",
-              "button_label": "",
-              "button_link": ""
+              "button_label": "Découvrir",
+              "button_link": "#"
             }
           },
           "slider-2": {
@@ -149,33 +149,18 @@
               "alignment": "center center",
               "overlay_opacity": 30,
               "color_text": "#ffffff",
-              "text_alignment": "center",
+              "text_alignment": "right",
               "slide_heading": "Image slide",
               "slide_subtitle": "subtitle",
-              "button_label": "",
-              "button_link": ""
-            }
-          },
-          "slider-3": {
-            "type": "image",
-            "settings": {
-              "image": "",
-              "alignment": "center center",
-              "overlay_opacity": 30,
-              "color_text": "#ffffff",
-              "text_alignment": "center",
-              "slide_heading": "Image slide",
-              "slide_subtitle": "subtitle",
-              "button_label": "",
-              "button_link": ""
+              "button_label": "Découvrir",
+              "button_link": "#"
             }
           }
         },
         "block_order": [
           "slider-0",
           "slider-1",
-          "slider-2",
-          "slider-3"
+          "slider-2"
         ],
         "settings": {
           "slider_height": "adapt",
@@ -247,12 +232,19 @@
           "show_sale_circle": false,
           "center_grid_link": true
         }
+      },
+      "1571233100904": {
+        "type": "custom-html",
+        "settings": {
+          "custom_html": "<div class=\"home-seo\">\n<h1>Qui sommes-nous ?<\/h1>\n<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit.<\/p>\n<\/div>"
+        }
       }
     },
     "content_for_index": [
       "slider",
       "1571229794811",
-      "newsletter"
+      "newsletter",
+      "1571233100904"
     ]
   },
   "presets": {

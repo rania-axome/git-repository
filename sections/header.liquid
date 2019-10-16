@@ -162,7 +162,8 @@
 
       {% if section.settings.nav_below_logo %}
         <div class="grid--full">
-          <div class="grid__item">
+          <div class="grid__item grid-logo">
+
 
             {% if request.page_type == 'index' %}
               <h1 class="site-header__logo{% if section.settings.logo == blank %}{% unless section.settings.left_aligned_logo == false and section.settings.nav_below_logo %} post-large--left{% endunless %}{% endif %}" itemscope itemtype="http://schema.org/Organization">
@@ -197,7 +198,9 @@
             {% else %}
               </div>
             {% endif %}
+            <span class="header-slogan"> Authentic Fashion & Déco !</span>
           </div>
+
         </div>
         <div class="grid--full medium-down--hide">
           <div class="grid__item">
