@@ -77,7 +77,7 @@
         {% when 'menu' %}
           <div class="grid__item {{ column_width }}">
             {% unless num_columns == 1 %}
-            <p class="h4 small-title">{{ block.settings.menu_title | escape }}</p>
+            <p class="h4 small-title accordion-title">{{ block.settings.menu_title | escape }}</p>
             {% endunless %}
             <ul class="site-footer__links{% if num_columns == 1 %} inline-list{% endif %}">
               {% for link in linklists[block.settings.menu].links %}
@@ -102,7 +102,7 @@
           </div>
 
         {% when 'newsletter' %}
-          <div class="grid__item {{ column_width }}">
+          <div class="bloc-newsletter-footer grid__item {{ column_width }}">
             <p class="h4 small-title">{{ 'layout.footer.newsletter_title' | t }}</p>
             {% unless block.settings.subtext == blank %}
               {{ block.settings.subtext }}
