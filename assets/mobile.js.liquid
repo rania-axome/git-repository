@@ -1,0 +1,18 @@
+import $ from "jquery-2.2.3.min.js";
+
+$(document).ready(function(){
+
+    let breakpoint = 768;
+
+    if($(document).width() < breakpoint) {
+
+
+        //Lien du footer en accordeon
+        if ($('#shopify-section-footer ').length) {
+            $('#shopify-section-footers .small-title').on('click', function (e) {
+                $(this).toggleClass('active').next().stop().slideToggle('medium');
+                e.preventDefault();
+            })
+        }
+    }
+});
