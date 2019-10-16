@@ -4,6 +4,9 @@ h1, h2, h3, h4, h5, h6 {
 .page-heading {
     font-size: {{ settings.$big-size }}px;
     font-family: 'abhaya_librebold';
+    @media only screen and (max-width: 768px) {
+        font-size: {{ settings.$big-size }}px - 5;
+    }
 }
 .btn {
     font-family: 'latoblack';

@@ -259,6 +259,26 @@
           "show_sale_circle": false,
           "center_grid_link": true
         }
+      },
+      "password-header": {
+        "type": "password-header",
+        "settings": {
+          "logo": "",
+          "logo_max_width": "200"
+        }
+      },
+      "password-content": {
+        "type": "password-content",
+        "settings": {
+          "title": "Ouverture prochaine",
+          "newsletter_enable": true,
+          "newsletter_form_heading": "Faites partie des premières personnes à être informées de notre lancement.",
+          "newsletter_form_subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
+          "newsletter_placeholder": "Adresse e-mail",
+          "newsletter_button_text": "Je souhaite être informé(e)",
+          "show_share_buttons": true,
+          "social_message": "Faites passer le mot"
+        }
       }
     },
     "content_for_index": [

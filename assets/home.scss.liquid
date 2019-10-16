@@ -94,6 +94,11 @@
         text-transform: capitalize;
         font-family: Lato,sans-serif;
     }
+    .slideshow-section {
+         @media only screen and (max-width: 768px) {
+            padding-bottom: 20px;
+         }
+    }
 }
 
 body.template-index {
@@ -108,6 +113,13 @@ body.template-index {
             .grid-link__meta {
                 color: {{ settings.color_secondary }};
                 font-size: {{ settings.$font-size-base }}px - 3;
+            }
+        }
+    }
+    .main-content {
+        &::after {
+            @media only screen and (max-width: 768px) {
+                padding-top: 40px;
             }
         }
     }

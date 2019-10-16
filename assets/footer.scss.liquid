@@ -6,7 +6,9 @@
         &.accordion-title {
             @media only screen and (max-width: 768px) {
                  margin-bottom: 0;
-                 border-bottom: 1px solid #D9D7D1;
+                 border-bottom: 1px solid #ebebeb;
+                 padding-top: 3px;
+                 padding-bottom: 3px;
             }
         }
     }
@@ -23,9 +25,19 @@
                 }
                 &.bloc-newsletter-footer {
                     text-align: left;
-                    .small-title { border-top: 1px solid #D9D7D1;}
+                    .small-title {
+                        border-top: 1px solid #ebebeb;
+                        padding-top: 30px;
+                        margin-bottom: 0;
+                    }
+                }
+                &.bloc-social-footer {
+                    padding-top: 15px;
                 }
             }
+        }
+        p {
+            line-height: 1.375;
         }
     }
     .site-footer__links {

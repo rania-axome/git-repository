@@ -10,7 +10,7 @@
   {% if settings.social_facebook_link != blank %}
     <li>
       <a class="icon-fallback-text" href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
-        <span class="icon icon-facebook" aria-hidden="true"></span>
+        {{ 'Reseau-face.svg' | asset_url | img_tag: 'facebook' }}
         <span class="fallback-text">Facebook</span>
       </a>
     </li>
