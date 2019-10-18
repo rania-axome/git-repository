@@ -173,7 +173,7 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "product_vendor_enable": true,
+          "product_vendor_enable": false,
           "product_quantity_enable": false,
           "product_image_zoom_type": "lightbox",
           "product_thumbnails_position": "right",

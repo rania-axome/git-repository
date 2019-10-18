@@ -5,13 +5,7 @@
     {% include 'breadcrumb' %}
   </div>
 
-
-
-  <header class="section-header section-header--large">
-    <h1 class="page-heading section-header__title{% if section.settings.tags_enable or section.settings.sort_enable %} section-header__title--left{% endif %}">{{ collection.title }}</h1>
-  </header>
-
-    {% if section.settings.tags_enable or section.settings.sort_enable %}
+ {% if section.settings.tags_enable or section.settings.sort_enable %}
     <div class="section-header__link--right tri-collection">
       {% if section.settings.tags_enable %}
         {% include 'collection-tags' %}
@@ -21,6 +15,12 @@
       {% endif %}
     </div>
     {% endif %}
+
+  <header class="section-header section-header--large">
+    <h1 class="page-heading section-header__title{% if section.settings.tags_enable or section.settings.sort_enable %} section-header__title--left{% endif %}">{{ collection.title }}</h1>
+  </header>
+
+
 
 
   {% if collection.description != blank %}
