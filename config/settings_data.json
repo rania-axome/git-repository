@@ -42,7 +42,7 @@
     "share_pinterest": true,
     "social_sharing_style": "normal",
     "checkout_header_image": "",
-    "checkout_logo_image": "",
+    "checkout_logo_image": "shopify:\/\/shop_images\/logo-header.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "medium",
     "checkout_body_background_image": "",
@@ -52,9 +52,9 @@
     "checkout_sidebar_background_color": "#fafafa",
     "checkout_heading_font": "Helvetica Neue",
     "checkout_body_font": "Helvetica Neue",
-    "checkout_accent_color": "#767676",
-    "checkout_button_color": "#e42c00",
-    "checkout_error_color": "#e42c00",
+    "checkout_accent_color": "#bb9f52",
+    "checkout_button_color": "#000000",
+    "checkout_error_color": "#f8300a",
     "collections_center_grid_link": false,
     "sections": {
       "header": {
@@ -245,6 +245,12 @@
           "display_type": "all",
           "sort": "alphabetical",
           "grid": "3"
+        }
+      },
+      "cart-template": {
+        "type": "cart-template",
+        "settings": {
+          "cart_notes_enable": false
         }
       }
     },
