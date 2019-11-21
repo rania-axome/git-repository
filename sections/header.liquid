@@ -85,21 +85,15 @@
             <ul class="header-bar__module header-bar__module--list">
               {% if customer %}
                 <li>
-                  <a href="{{ routes.account_url }}">{{ 'layout.customer.account' | t }}</a>
-                </li>
-                <li>
-                  {{ 'layout.customer.log_out' | t | customer_logout_link }}
+                  <a href="{{ routes.account_url }}">
+                  	{{ 'interface-user.svg' | asset_url | img_tag: 'interface-user' }}
+                  </a>
                 </li>
               {% else %}
-                <a href="{{ routes.customer.log_in }}" class="cart-page-link">
-                  {{ 'Panier.svg' | asset_url | img_tag: 'Panier' }}
+                <li>
+                  <a href="{{ routes.account_login_url }}" class="cart-page-link">
+                  {{ 'interface-user.svg' | asset_url | img_tag: 'interface-user' }}
                 </a>
-                <li>
-                  {{ 'layout.customer.log_in' | t | customer_login_link }}
-                </li>
-                <li>{{ 'layout.customer.or' | t }}</li>
-                <li>
-                  {{ 'layout.customer.create_account' | t | customer_register_link }}
                 </li>
               {% endif %}
             </ul>
