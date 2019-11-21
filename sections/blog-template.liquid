@@ -70,7 +70,7 @@
                         {% if article.excerpt.size > 0 %}
                         {{ article.excerpt }}
                         {% else %}
-                        <p>{{ article.content | strip_html | truncatewords: 100 }}</p>
+                        <p>{{ article.content | strip_html | truncate: 235 }}</p>
                         {% endif %}
                     </div>
 
@@ -126,7 +126,7 @@
 "settings": [
 {
 "type": "checkbox",
-"id": "blog_author_enable",
+"id": "blog_author_enable", 
 "label": {
 "da": "Vis forfatter af blogopslag",
 "de": "Autor eines Blog-Beitrags anzeigen",

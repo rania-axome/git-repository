@@ -1,4 +1,5 @@
 <div class="page-404">
     <h1>{{ 'general.404.title' | t }}</h1>
+    {{ '404-sudnomade.jpg' | asset_url | img_tag : '404-subnomade' }}
     <p>{{ 'general.404.subtext_html' | t: link: routes.all_products_collection_url }}</p>
 </div>

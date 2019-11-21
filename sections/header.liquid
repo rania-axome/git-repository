@@ -91,6 +91,9 @@
                   {{ 'layout.customer.log_out' | t | customer_logout_link }}
                 </li>
               {% else %}
+                <a href="{{ routes.customer.log_in }}" class="cart-page-link">
+                  {{ 'Panier.svg' | asset_url | img_tag: 'Panier' }}
+                </a>
                 <li>
                   {{ 'layout.customer.log_in' | t | customer_login_link }}
                 </li>
