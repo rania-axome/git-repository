@@ -131,39 +131,39 @@
           "slider-1": {
             "type": "image",
             "settings": {
-              "image": "",
-              "alignment": "center center",
-              "overlay_opacity": 30,
+              "image": "shopify:\/\/shop_images\/accessoires_or.jpg",
+              "alignment": "left center",
+              "overlay_opacity": 36,
               "color_text": "#ffffff",
               "text_alignment": "right",
-              "slide_heading": "Image",
-              "slide_subtitle": "subtitle",
-              "button_label": "Découvrir",
-              "button_link": "#"
+              "slide_heading": "Accessoires",
+              "slide_subtitle": "Bijoux doré s...",
+              "button_label": "Explorer",
+              "button_link": "shopify:\/\/collections\/bijoux"
             }
           },
           "slider-2": {
             "type": "image",
             "settings": {
-              "image": "",
+              "image": "shopify:\/\/shop_images\/Table_bois.jpg",
               "alignment": "center center",
               "overlay_opacity": 30,
               "color_text": "#ffffff",
               "text_alignment": "right",
-              "slide_heading": "Image slide",
-              "slide_subtitle": "subtitle",
+              "slide_heading": "Table de fêtes",
+              "slide_subtitle": "Tendance naturelle",
               "button_label": "Découvrir",
-              "button_link": "#"
+              "button_link": "shopify:\/\/collections\/decorations"
             }
           }
         },
         "block_order": [
-          "slider-0",
           "slider-1",
-          "slider-2"
+          "slider-2",
+          "slider-0"
         ],
         "settings": {
-          "slider_height": "adapt",
+          "slider_height": "medium",
           "slider_autorotate": false,
           "slider_autorotate_rate": 5,
           "slider_home_transition": "fade",
