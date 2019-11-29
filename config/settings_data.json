@@ -114,32 +114,18 @@
       "slider": {
         "type": "slider",
         "blocks": {
-          "slider-0": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Slider.jpg",
-              "alignment": "center center",
-              "overlay_opacity": 10,
-              "color_text": "#ffffff",
-              "text_alignment": "right",
-              "slide_heading": "Coussins",
-              "slide_subtitle": "Donnez du caractère à votre intérieur",
-              "button_label": "Découvrir",
-              "button_link": "#"
-            }
-          },
           "slider-1": {
             "type": "image",
             "settings": {
               "image": "shopify:\/\/shop_images\/accessoires_or.jpg",
               "alignment": "left center",
-              "overlay_opacity": 36,
+              "overlay_opacity": 28,
               "color_text": "#ffffff",
               "text_alignment": "right",
               "slide_heading": "Accessoires",
-              "slide_subtitle": "Bijoux doré s...",
-              "button_label": "Explorer",
-              "button_link": "shopify:\/\/collections\/bijoux"
+              "slide_subtitle": "Bijoux dorés...",
+              "button_label": "Découvrir",
+              "button_link": "shopify:\/\/collections\/accessoires"
             }
           },
           "slider-2": {
@@ -154,6 +140,20 @@
               "slide_subtitle": "Tendance naturelle",
               "button_label": "Découvrir",
               "button_link": "shopify:\/\/collections\/decorations"
+            }
+          },
+          "slider-0": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Slider.jpg",
+              "alignment": "center center",
+              "overlay_opacity": 10,
+              "color_text": "#ffffff",
+              "text_alignment": "right",
+              "slide_heading": "Coussins",
+              "slide_subtitle": "Donnez du caractère à votre intérieur",
+              "button_label": "Découvrir",
+              "button_link": "#"
             }
           }
         },
