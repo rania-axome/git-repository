@@ -198,7 +198,7 @@
           "show_sale_circle": true,
           "show_sold_out_circle": true,
           "sort_enable": true,
-          "tags_enable": true,
+          "tags_enable": false,
           "center_grid_link": true
         }
       },
@@ -229,7 +229,7 @@
           "show_product_recommendations": true,
           "heading": "Vous pourriez aimer également",
           "vendor_enable": false,
-          "show_sale_circle": false,
+          "show_sale_circle": true,
           "center_grid_link": true
         }
       },
