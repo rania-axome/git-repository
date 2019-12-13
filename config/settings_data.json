@@ -214,8 +214,8 @@
         "type": "featured-collection",
         "settings": {
           "title": "Nos nouveautés",
-          "featured_collection": "coussin",
-          "num_per_row": 3,
+          "featured_collection": "mode",
+          "num_per_row": 4,
           "num_rows": 1,
           "vendor_enable": false,
           "show_sale_circle": false,
