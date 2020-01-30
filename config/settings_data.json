@@ -117,43 +117,43 @@
           "slider-1": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/accessoires_or.jpg",
+              "image": "shopify:\/\/shop_images\/45A8531.jpeg",
               "alignment": "left center",
               "overlay_opacity": 28,
               "color_text": "#ffffff",
               "text_alignment": "right",
-              "slide_heading": "Accessoires",
-              "slide_subtitle": "Bijoux dorés...",
+              "slide_heading": "Mode",
+              "slide_subtitle": "boheme, chic........",
               "button_label": "Découvrir",
-              "button_link": "shopify:\/\/collections\/accessoires"
+              "button_link": "shopify:\/\/collections\/mode"
             }
           },
           "slider-2": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Table_bois.jpg",
+              "image": "shopify:\/\/shop_images\/accessoires_or.jpg",
               "alignment": "center center",
               "overlay_opacity": 30,
               "color_text": "#ffffff",
               "text_alignment": "right",
-              "slide_heading": "Table de fêtes",
-              "slide_subtitle": "Tendance naturelle",
+              "slide_heading": "accessoires",
+              "slide_subtitle": "bijoux, sacs écharpes......",
               "button_label": "Découvrir",
-              "button_link": "shopify:\/\/collections\/decorations"
+              "button_link": "shopify:\/\/collections\/accessoires"
             }
           },
           "slider-0": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/Slider.jpg",
+              "image": "shopify:\/\/shop_images\/Table_bois.jpg",
               "alignment": "center center",
               "overlay_opacity": 10,
               "color_text": "#ffffff",
               "text_alignment": "right",
-              "slide_heading": "Coussins",
+              "slide_heading": "Deco",
               "slide_subtitle": "Donnez du caractère à votre intérieur",
               "button_label": "Découvrir",
-              "button_link": "#"
+              "button_link": "shopify:\/\/collections\/decorations"
             }
           }
         },
