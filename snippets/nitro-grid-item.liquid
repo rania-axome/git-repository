@@ -1,0 +1,66 @@
+{% unless grid_image_width %}
+  {%- assign grid_image_width = '300x300' -%}
+{% endunless %}
+{%- assign grid_image_scale = '2' -%}
+
+<div class="{{grid_class }} grid-view-item{% unless product.available %} product-price--sold-out grid-view-item--sold-out{% endunless %}">
+  <a class="grid-view-item__link" href="{{ product.url | within: collection }}">
+    <img class="grid-view-item__image" src="{{ product.featured_image.src | img_url: grid_image_width, scale: grid_image_scale }}" alt="{{ product.featured_image.alt }}">
+    <div class="h4 grid-view-item__title text-center">{{ product.title }}</div>
+	{%- if shop.metafields.nitro.components contains 'review' -%}
+	<div class="nitro-review text-center"><span class="shopify-product-reviews-badge" data-id="{{ product.id }}"></span></div>
+	{%- endif -%}
+    <div class="grid-view-item__meta">
+      <!-- snippet/product-price.liquid -->
+      {% if product.title %}
+        {%- assign compare_at_price = product.compare_at_price -%}
+        {%- assign price = product.price -%}
+        {%- assign price_varies = product.price_varies -%}
+        {%- assign available = product.available -%}
+      {% else %}
+        {%- assign compare_at_price = 1999 -%}
+        {%- assign price = 1999 -%}
+        {%- assign price_varies = false -%}
+        {%- assign available = true -%}
+      {% endif %}
+
+      {%- assign money_price = price | money -%}
+
+      {% if compare_at_price > price %}
+        {% if price_varies %}
+          <span class="visually-hidden">{{ 'sections.nitro-cart-related-template.regular_price' | t }}</span>
+          <s class="product-price__price p-right-15">{{ compare_at_price | money }}</s>
+          <span class="product-price__price p-right-15 product-price__sale">
+            {{ money_price }}
+            <span class="product-price__sale-label">{{ 'sections.nitro-cart-related-template.on_sale' | t }}</span>
+          </span>
+        {% else %}
+          <span class="visually-hidden">{{ 'sections.nitro-cart-related-template.regular_price' | t }}</span>
+          <s class="product-price__price p-right-15">{{ compare_at_price | money }}</s>
+          <span class="product-price__price p-right-15 product-price__sale">
+            {{ money_price }}
+            <span class="product-price__sale-label">{{ 'sections.nitro-cart-related-template.on_sale' | t }}</span>
+          </span>
+        {% endif %}
+      {% else %}
+
+        {% if price_varies %}
+          <span class="product-price__price p-right-15">{{ money_price }}</span>
+        {% else %}
+          <span class="visually-hidden">{{ 'sections.nitro-cart-related-template.regular_price' | t }}</span>
+          <span class="product-price__price p-right-15">{{ money_price }}</span>
+        {% endif %}
+      {% endif %}
+
+      {% unless available %}
+        <span class="product-price__sold-out">{{ 'sections.nitro-cart-related-template.sold_out' | t }}</span>
+      {% endunless %}
+
+    </div>
+  </a>
+  {%- if product.variants.size > 1 -%}
+  	<a class="button btn nitro-related-add-to-cart margin-top-10" target="_blank" href="{{ product.url}}">{{ 'sections.nitro-cart-related-template.product_options' | t }}</a>
+  {%- else -%}
+  	<a class="button btn nitro-related-add-to-cart margin-top-10" target="_blank" {% unless available %} style="pointer-events: none;" {% endunless%} href="/cart/add/{{product.variants.first.id}}">{{ 'sections.nitro-cart-related-template.add_to_cart' | t }}</a>
+  {%- endif -%}
+</div>

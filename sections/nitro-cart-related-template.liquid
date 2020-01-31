@@ -1,0 +1,341 @@
+{% comment %}{%- assign grid_class = 'col-md-4 col-sm-6 p-right-10 p-left-10 ' -%} {%- assign grid_class = ' p-right-10 p-left-10 ' -%}{% endcomment %}
+{%- assign grid_class =  shop.metafields.nitro.grid_class -%}
+{%- capture related_products -%}
+    {%- paginate collection.products by 150 -%}
+    {%- assign limit = shop.metafields.nitro.limit -%}
+    {%- assign query = canonical_url | split: '?' | last   -%}
+    {%- assign request_related = blank  -%}
+    {%- if query contains 'order='-%}
+      {%- assign request_related = query | split: 'order=' | last | split:'&' | first   | strip -%}
+    {%- endif -%}
+    {%- assign cart_handles = cart.items | map: 'product_id'-%}
+    {%- if request_related == blank -%}
+      {%- assign exist_handles = '' -%}
+          {%- for product in collection.products limit: 100 -%}
+        {%- if cart_handles contains product.id -%}
+          {%- assign exist_handles =  exist_handles | append: ' ' | append:  product.handle | strip  -%}
+          {%- continue -%}
+        {%- endif -%}
+            {%- include 'nitro-grid-item'   grid_class: grid_class-%}
+            {%- assign limit = limit |  minus: 1 -%}
+            {%- if limit <=0 -%}{%- break -%}{%- endif -%}
+          {%- endfor -%}
+        {%- if limit > 0 and exist_handles != ""-%}
+            {%- assign exist_handles = exist_handles | split: ' ' | uniq -%}
+            {%- for h  in exist_handles -%}
+              {%- assign product = all_products[h]-%}
+              {%- include 'nitro-grid-item'   grid_class: grid_class-%}
+                      {%- assign limit = limit |  minus: 1 -%}
+                      {%- if limit <=0 -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
+        {%- endif-%}
+    {%- else -%}
+        {%- assign same_collection = false -%}
+        {%- assign same_tag = false -%}
+        {%- assign same_type = false -%}
+        {%- assign same_vendor = false -%}
+        {%- assign same_title = false -%}
+        {%- assign handle_product = blank  -%}
+        {%- assign req = request_related | split: '*' -%}
+        {%- for segment in  req-%}
+            {%- if segment == 'collection' -%}{%- assign same_collection = true -%}{%- continue -%}{%- endif -%}
+            {%- if segment == 'tag' -%}{%- assign same_tag = true -%}{%- continue -%}{%- endif -%}
+            {%- if segment == 'type' -%}{%- assign same_tag = true -%}{%- continue -%}{%- endif -%}
+            {%- if segment == 'vendor' -%}{%- assign same_tag = true -%}{%- continue -%}{%- endif -%}
+            {%- if segment == 'title' -%}{%- assign same_title = true -%}{%- continue -%}{%- endif -%}
+            {%- if segment contains 'product.' -%}{%- assign handle_product = segment | split:'.' | last  -%}{%- continue -%}{%- endif -%}
+        {%- endfor -%}
+        {%- assign is_collection  = false-%}
+        {%- unless collection.current_type and  collection.current_vendor-%}{%- assign is_collection  = false-%}{%- endunless -%}
+
+        {%- if handle_product != blank -%}
+            {%- unless handle_product contains '%2c' -%}
+                    {%- assign current_product = all_products[handle_product] -%}
+                    {%- assign handle_product= current_product.handle -%}
+                    {%- assign all_collections_handle = current_product.collections | map: 'handle'  -%}
+            {%- endunless -%}
+        {%- endif -%}
+        {%- if handle_product != blank and  handle_product contains '%2c' -%}
+            {%- assign handle_products = handle_product | split: '%2c' -%}
+            {%- if limit > 20 -%}{%- assign limit = 20-%}{%- endif -%}
+            {%- assign exist_handles =  '' -%}
+            {%- for handle  in handle_products limit: limit -%}
+              {%- assign product = all_products[handle] -%}
+              {%- if  product.handle == blank -%}{%- continue -%}{%- endif -%}
+              {%- if cart_handles contains product.id -%}
+                            {%- assign exist_handles =  exist_handles | append: ' ' | append:  product.handle | strip  -%}
+                            {%- continue -%}
+                        {%- endif -%}
+              {%- include 'nitro-grid-item'   grid_class: grid_class-%}
+              {%- assign limit = limit |  minus: 1 -%}
+              {%- if limit <=0 -%}{%- break -%}{%- endif -%}
+            {%- endfor -%}
+            {%- assign exist_handles = exist_handles | split: ' ' | uniq -%}
+            {%- if limit > 0 and exist_handles != ""-%}
+      
+                {%- for h  in exist_handles %}
+                    {%- assign product = all_products[h]-%}
+                    {%- include 'nitro-grid-item'   grid_class: grid_class-%}
+                    {%- assign limit = limit |  minus: 1 -%}
+                    {%- if limit <=0 -%}{%- break -%}{%- endif -%}
+                {%- endfor -%}
+            {%- endif-%}
+        {%- else -%}
+                {%- assign exist_handles =  '' -%}
+                {%- for product in collection.products -%}
+                    {%- if handle_product != blank -%}
+                        {%- if product.handle == current_product.handle -%}{%- continue -%}{%- endif -%}
+                        {%- if same_title and product.title != current_product.title-%}{%- continue %}{%- endif -%}
+                    {%- endif -%}
+                    {%- if  same_type and collection.current_type -%}
+                        {%- if product.type != current_product.type-%}{%- continue -%}{%- endif -%}
+                    {%- endif -%}
+                    {%- if same_vendor and collection.current_vendor -%}
+                        {%- if product.vendor != current_product.vendor-%}{%- continue -%}{%- endif -%}
+                    {%- endif -%}
+                    {%- if same_tag and current_tags.size == blank   -%}
+                        {%- assign tags = current_product.tags  -%}
+                        {%- assign check_same_tag  = false  -%}
+                        {%- for tag in product.tags -%}
+                            {%- if tags contains tag -%}{%- assign check_same_tag  = true  -%}{%- break -%}{%- endif -%}
+                        {%- endfor -%}
+                        {%- if check_same_tag == false -%}{%- continue -%}{%- endif -%}
+                    {%- endif -%}
+                    {%- unless is_collection -%}
+                        {%- if same_collection and handle_product != blank -%}
+                            {%- assign check_same_collection = false -%}
+                             {%- for c in product.collections -%}
+                                {%- if all_collections_handle contains c.handle-%}{%- assign check_same_collection = true -%}{%- break -%}{%- endif -%}
+                            {%- endfor-%}
+                            {%- if check_same_collection == false-%}{%- continue -%}{%- endif -%}
+                        {%- endif -%}
+                    {%- endunless -%}
+                    {%- if cart_handles contains product.id -%}
+                        {%- assign exist_handles =  exist_handles | append: ' ' | append:  product.handle | strip  -%}
+                        {%- continue -%}
+                    {%- endif -%}
+                    {%- include 'nitro-grid-item' grid_class: grid_class -%}
+                    {%- assign limit = limit |  minus: 1 -%}
+                    {%- if limit <=0 -%}{%- break -%}{%- endif -%}
+                {%- endfor -%}
+
+                {%- assign exist_handles = exist_handles | split: ' ' | uniq -%}
+                {%- if limit > 0 and exist_handles != ""-%}
+                     
+                    {%- for h  in exist_handles -%}
+                        {%- assign product = all_products[h]-%}
+                        {%- include 'nitro-grid-item'   grid_class: grid_class-%}
+                        {%- assign limit = limit |  minus: 1 -%}
+                        {%- if limit <=0 -%}{%- break -%}{%- endif -%}
+                    {%- endfor -%}
+                {%- endif-%}
+        {%- endif -%}
+
+    {%- endif -%}
+    {%- endpaginate-%}
+{%- endcapture -%}
+{%- unless grid_image_width -%}
+  {%- assign grid_image_width = '300x300' -%}
+{%- endunless -%}
+{%- assign grid_image_scale = '2' -%}
+<section id="nitro-related-cart" data-currency='{{ shop.currency }}' class="nitro-related-cart">
+  <div class="nitro-cart-section">
+  		<div class="nitro-heading-block">
+          <h3 class="text-center ">{{'sections.nitro-cart-related-template.cart_title' | t  }}</h3>
+    	</div>
+    	<div class="nitro-cart-block  {%  if cart.item_count > 3  %} nitro-scrollbar{% endif %}">
+        	 {%- if cart.item_count -%}
+          		{%- for line_item in cart.items -%}
+                <div class="line-item row-flex align-items-center margin-0" data-id="{{line_item.id}}" data-index="{{ forloop.index }}" data-key="{{line_item.key}}" data-pid="{{line_item.product_id }}" data-vid="{{line_item.variant_id}}">
+					<div class="cart-item-thumbnail col-sm col-sm-auto col-3">
+                      {{ line_item |   img_url: grid_image_width, scale: grid_image_scale | img_tag }}
+                  	</div>
+                  <div class="cart-item-title text-center text-sm-left col-sm col-6">
+                    <a href="{{ line_item.product.url }}" title="{{ line_item.product.title | strip_html }}">{{ line_item.product.title | html }}</a>
+                    {%- unless line_item.variant.title contains 'Default' -%}
+                    <span class="variation clearfix" title="{{ line_item.title | escape |strip_html }}">
+                      {{line_item.variant.title}}
+                    </span>
+                    {%- endunless -%}
+      					 {% assign property_size = line_item.properties | size %}
+      						{% if property_size > 0 %}
+      						  {% for p in line_item.properties %}
+      							{% assign first_character_in_key = p.first | truncate: 1, '' %}
+      							{% unless p.last == blank or first_character_in_key == '_' %}
+      							  <div class="cart-item__property text-sm-center">
+      								{{ p.first }}:
+      								{% if p.last contains '/uploads/' %}
+      								  <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+      								{% else %}
+      								  {{ p.last }}
+      								{% endif %}
+      							  </div>
+      							{% endunless %}
+      						  {% endfor %}
+      						{% endif %}
+                  </div>
+                  <div class="cart-item-price col-sm col-sm-auto col-md-auto col-3" data-price="{{ line_item.price }}" data-format='{{shop.money_format  }}'>
+                    {{ line_item.price | money }}
+                  </div>
+                  <div class="cart-item-quantity col-sm col-sm-auto col-4">
+                    <div class="quantity quantity-inner pr row-flex margin-0">
+                      <a class="cart__popup-qty quantity-down text-center" href="javascript:void(0);">-</a>
+                      <input type="number" name="quantity" value="{{ line_item.quantity }}" min="1"
+                             {% if line_item.variant.inventory_quantity >= 1 and line_item.variant.inventory_management %}max="{{line_item.variant.inventory_quantity}}"{% endif %}
+                             class="qty cart__popup-qty--input text-center" data-pid="{{line_item.id}}" oninput="this.value = this.value.replace(/[^0-9.]/g, ''); this.value = this.value.replace(/(\..*)\./g, '$1');">
+                      <a class="xcp-plus cart__popup-qty cart__popup-qty--plus text-center quantity-up" href="javascript:void(0);">+</a>
+                    </div>
+                  </div>
+                  <div class="cart-item-total text-center col-sm col-sm-auto col-6" data-price="{{ line_item.price  }}" data-line_price="{{ line_item.line_price  }}" data-format='{{shop.money_format  }}'>
+                  	 {{ line_item.line_price | money }}
+                  </div>
+                  <div class="cart-item-action text-center col-sm-auto col-2">
+                    <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" data-id="{{line_item.id}}" data-pid="{{line_item.id}}" class="nitro-remove-item">{{'sections.nitro-cart-related-template.remove' | t  }}</a>
+                  </div>
+                </div>
+
+          		{%- endfor -%}
+          	 {%- else -%}
+          <div class="nitro-cart-empty"><span>{{'sections.nitro-cart-related-template.cart_empty' | t  }}</span></div>
+          	 {%- endif -%}
+    	</div>
+    	<div class="nitro-cart-info-block row-flex margin-0 justify-content-between text-center">
+          <div class="cart-info margin-top-30 col-12 col-sm-12 p-right-15 p-sm-right-0 text-left p-left-15">
+            <div class="nitro-column">
+              <div id="the4-shipping-calculator">
+                <h3>{{'sections.nitro-cart-related-template.estimates_heading_title' | t  }}
+                </h3>
+                <div>
+                  <p class="field">
+                    <label for="the4-address_country">{{'sections.nitro-cart-related-template.country' | t  }}
+                    </label>
+                    <select id="the4-address_country" name="address[country]" data-default="">
+                      {{ country_option_tags  }}
+                    </select>
+                  </p>
+                  <p class="field" id="the4-address_province_container" style="">
+                    <label for="the4-address_province" id="the4-address_province_label">{{'sections.nitro-cart-related-template.state' | t  }}
+                    </label>
+                    <select id="the4-address_province" name="address[province]" data-default="">
+                      
+                    </select>
+                  </p>  
+                  <p class="field">
+                    <label for="the4-address_zip">{{'sections.nitro-cart-related-template.zip_code' | t  }}
+                    </label>
+                    <input type="text" id="the4-address_zip" name="address[zip]">
+                  </p>
+                  <p class="field">
+                    <input type="button" class="get-rates btn button" value="{{ 'sections.nitro-cart-related-template.shipping_button' | t }}" data-default="{{ 'sections.nitro-cart-related-template.shipping_button' | t }}" data-calculating="{{ 'sections.nitro-cart-related-template.shipping_calculating' | t }}">
+                  </p>
+                </div>
+                <div id="the4-wrapper-response">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cart-note-block margin-top-30 col-12 col-sm-6 p-left-15 p-sm-left-0">
+            {%- if shop.metafields.nitro.components contains 'note' -%}
+            <h4 class="text-center ">{{'sections.nitro-cart-related-template.cart_note' | t  }}</h4>
+            <form action="/cart" method="post" id="updateCartNote">
+              <textarea name="note" class="cart-note__input db" id="CartSpecialInstructions" rows="{%- if shop.metafields.nitro.components contains 'cuppon' -%}7{%- else-%}5{%- endif -%}"  >{{cart.note}}</textarea>
+            </form>
+            {%- endif -%}
+            {%- if shop.metafields.nitro.components contains '[' -%} 
+            <div class="text-center margin-top-20">
+              <img alt="Trust badge" src="{{shop.metafields.nitro.components | split: '[' | last | split: ']' | fisrt }}">
+            </div>
+            {%- endif -%}
+          </div>
+          <div class="cart-info margin-top-30 col-12 col-sm-6 p-right-15 p-sm-right-0 text-left p-left-15">
+            <h4 class="text-center ">{{'sections.nitro-cart-related-template.cart_totals_title' | t  }}</h4>
+            <table>
+            	<tbody><tr class="subTotal"  >
+                  <td>{{'sections.nitro-cart-related-template.cart_subtotal' | t  }} </td>
+                  <td colspan="2">
+                    <span class="price cart__popup-stotal" id="subTotal" data-format='{{shop.money_format  }}' data-price="{{cart.total_price}}">{{cart.total_price | money }}</span></td>
+                </tr>
+
+                 {%- if shop.metafields.nitro.components contains 'shipping' -%}
+                  <tr class="shippingBox" >
+                    <td>{{'sections.nitro-cart-related-template.cart_shipping' | t  }}</td>
+                    <td colspan="2" class="shippingText">
+
+                    </td>
+                  </tr>
+                  <tr class="order-total">
+                    <td>{{'sections.nitro-cart-related-template.cart_total' | t  }}</td>
+                    <td colspan="2"><span class="price" data-format='{{shop.money_format  }}'>{{cart.total_price | money }}</span></td>
+                  </tr>
+                 {%- endif -%}
+              </tbody>
+            </table>
+			
+            <form action="/checkout" method="post">
+      			{%- if shop.metafields.nitro.components contains 'cuppon' -%}
+                    <div class="live-coupon-element">
+                        <div class="box-coupon">
+                          <div class="coupon">
+                            <div class="inner-box">
+                              <input type="text" name="discount" class="input-text" id="coupon_code" value="" placeholder="{{'sections.nitro-cart-related-template.cart_cuppon' | t  }}">
+                              <button class="live-coupon-check-btn" style="display: none;" type="button"></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+      				{%- endif -%}
+              <button class="button btn-primary medium checkout-button nitro-checkout-button">{{'sections.nitro-cart-related-template.cart_checkout' | t  }}</button>
+            </form>
+			
+          </div>
+          
+    	</div>
+  </div>
+  {%- if related_products != blank -%}
+  <div class="nitro-related-section">
+    <h3 class="text-center ">{{'sections.nitro-cart-related-template.related_title' | t  }}</h3>
+    <div class="row-flex {{shop.metafields.nitro.carousel}}>
+    	{{related_products}}
+    </div>
+  </div>
+  {%- endif -%}
+</section>
+
+
+{% schema %}
+  {
+    "locales": {
+      "en": {
+        "cart_title": "REVIEW YOUR CART",
+    		"cart_note":"Special instructions for seller",
+    		"cart_empty":"You don't have any item in your cart",
+    		"cart_totals_title":"Cart totals",
+    		"cart_subtotal":"Subtotal",
+        "shipping_button":"Calculate shipping",
+        "shipping_calculating":"Calculating...",
+    		"cart_shipping":"Shipping",
+    		"cart_total":"Total",
+    		"cart_cuppon":"Coupon code",
+    		"cart_checkout":"Go to Checkout",
+    		"related_title":"You may also like this",
+    		"regular_price":"Regular price",
+    		"on_sale":"Sale",
+    		"sold_out":"Sold out",
+    		"add_to_cart":"Add to cart",
+    		"product_options":"View details",
+        "remove":"Remove",
+        "zip_code":"Zip/Postal Code",
+        "state":"State",
+        "country":"Country",
+        "estimates_heading_title":"Get shipping estimates"
+      }
+    }
+  }
+{% endschema %}
+
+{% stylesheet %}
+
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
