@@ -68,8 +68,7 @@
           "left_aligned_logo": false,
           "show_header_lines": false,
           "show_announcement": false,
-          "header_text": "Annoncez quelque chose ici",
-          "announcement_link": ""
+          "header_text": "Annoncez quelque chose ici"
         }
       },
       "footer": {
@@ -97,7 +96,7 @@
           "footer-3": {
             "type": "newsletter",
             "settings": {
-              "subtext": "<p>Inscrivez-vous &agrave; notre newsletter et recevez nos offres exclusives.<\/p>"
+              "subtext": "<p>Inscrivez-vous à notre newsletter et recevez nos offres exclusives.<\/p>"
             }
           }
         },
@@ -206,20 +205,20 @@
         "type": "newsletter",
         "settings": {
           "heading": "Newsletter",
-          "subtext": "<p>Inscrivez-vous &agrave; notre newsletter<br>et recevez nos offres exclusives.<br>D&eacute;couvrez en avant premi&egrave;re toutes nos nouveaut&eacute;s et coup de coeur.<\/p>",
+          "subtext": "<p>Inscrivez-vous à notre newsletter<br\/>et recevez nos offres exclusives.<br\/>Découvrez en avant première toutes nos nouveautés et coup de coeur.<\/p>",
           "color_bg": "#eaebea"
         }
       },
       "1571229794811": {
         "type": "featured-collection",
         "settings": {
-          "title": "Nos nouveautés",
+          "title": "Notre sélection",
           "featured_collection": "mode",
           "num_per_row": 4,
-          "num_rows": 1,
-          "vendor_enable": false,
-          "show_sale_circle": false,
-          "show_sold_out_circle": false,
+          "num_rows": 2,
+          "vendor_enable": true,
+          "show_sale_circle": true,
+          "show_sold_out_circle": true,
           "center_grid_link": true
         }
       },
