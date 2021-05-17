@@ -95,6 +95,8 @@
   {% endif %}
   <meta name="facebook-domain-verification" content="qabhu3ybu9o4srrlrj86iqdxxgdp9s" />
 
+
+  {% render 'easy-gdpr-settings' %}
 </head>
 
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }}">
