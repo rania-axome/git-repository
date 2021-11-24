@@ -68,7 +68,8 @@
           "left_aligned_logo": false,
           "show_header_lines": false,
           "show_announcement": false,
-          "header_text": "Annoncez quelque chose ici"
+          "header_text": "Annoncez quelque chose ici",
+          "announcement_link": ""
         }
       },
       "footer": {
@@ -113,6 +114,20 @@
       "slider": {
         "type": "slider",
         "blocks": {
+          "bb243f70-5484-433e-94bd-99b4b5285833": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Black-friday.jpg",
+              "alignment": "center center",
+              "overlay_opacity": 0,
+              "color_text": "#ffffff",
+              "text_alignment": "center",
+              "slide_heading": "",
+              "slide_subtitle": "",
+              "button_label": "",
+              "button_link": ""
+            }
+          },
           "slider-1": {
             "type": "image",
             "settings": {
@@ -157,6 +172,7 @@
           }
         },
         "block_order": [
+          "bb243f70-5484-433e-94bd-99b4b5285833",
           "slider-1",
           "slider-2",
           "slider-0"
