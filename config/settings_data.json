@@ -116,6 +116,7 @@
         "blocks": {
           "bb243f70-5484-433e-94bd-99b4b5285833": {
             "type": "image",
+            "disabled": true,
             "settings": {
               "image": "shopify:\/\/shop_images\/Black-friday.jpg",
               "alignment": "center center",
